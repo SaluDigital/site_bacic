@@ -278,7 +278,7 @@
         overflow: hidden;
         background:
           linear-gradient(rgba(247, 244, 238, 0.78), rgba(247, 244, 238, 0.78)),
-          url("./assets/hero.jpg") center calc(38% + 100px) / cover no-repeat;
+          url("./assets/hero.jpg") calc(50% + 150px) calc(38% + 100px) / cover no-repeat;
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -1455,6 +1455,12 @@
 
         .nav-toggle {
           display: inline-flex;
+          margin-left: auto;
+        }
+
+        .nav-menu {
+          display: none;
+          margin-left: 0;
         }
 
         .nav-links,
@@ -1463,15 +1469,27 @@
         }
 
         .site-nav.open .nav-shell {
+          position: relative;
           border-bottom-left-radius: 30px;
           border-bottom-right-radius: 30px;
+        }
+
+        .site-nav.open .brand {
+          display: none;
+        }
+
+        .site-nav.open .nav-toggle {
+          position: absolute;
+          top: 14px;
+          right: 16px;
+          margin-left: 0;
         }
 
         .site-nav.open .nav-menu {
           display: grid;
           gap: 14px;
           width: 100%;
-          padding-top: 10px;
+          padding-top: 64px;
         }
 
         .site-nav.open .nav-links {
@@ -1501,10 +1519,18 @@
           width: min(100% - 28px, 1180px);
         }
 
+        .section {
+          padding: 80px 0 !important;
+        }
+
         .hero {
           background:
             linear-gradient(rgba(247, 244, 238, 0.74), rgba(247, 244, 238, 0.74)),
-            url("./assets/hero.jpg") calc(62% - 200px) calc(34% + 100px) / cover no-repeat;
+            url("./assets/hero.jpg") calc(62% - 175px) calc(34% + 50px) / cover no-repeat;
+        }
+
+        .hero::before {
+          display: none;
         }
 
         .site-nav {
@@ -1521,20 +1547,147 @@
         }
 
         .hero-grid {
-          padding-top: 138px;
+          gap: 18px;
+          padding: 206px 0 45px;
+        }
+
+        .hero-logo {
+          margin-top: 58px;
+        }
+
+        .hero .text-lg {
+          line-height: 1.35;
+        }
+
+        .split-header {
+          gap: 18px;
+          margin-bottom: 36px;
+          text-align: center;
+        }
+
+        .split-header .eyebrow {
+          margin-bottom: 10px;
+        }
+
+        .split-header .text-lg {
+          margin: 0 auto;
+        }
+
+        .gallery-header {
+          text-align: center;
+        }
+
+        .gallery-header .text-lg,
+        .gallery-header .title {
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .service-grid {
           grid-template-columns: 1fr;
         }
 
-        #tratamentos {
-          padding-bottom: 22px !important;
+        .service-card {
+          align-items: center;
+          text-align: center;
         }
 
-        .differentials {
-          padding-top: 72px;
-          padding-bottom: 72px;
+        .service-icon {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .journey-card {
+          text-align: center;
+        }
+
+        .journey-card::before {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .differential {
+          align-items: center;
+          text-align: center;
+        }
+
+        .differential-icon {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .method-grid > div,
+        .about-grid > div,
+        .location-grid > div,
+        .cta-panel > div {
+          text-align: center;
+        }
+
+        .method-step,
+        .method-step div,
+        .method-step h3,
+        .method-step p {
+          text-align: left;
+        }
+
+        .about-grid > :first-child {
+          order: 2;
+        }
+
+        .about-grid > :last-child {
+          order: 1;
+        }
+
+        .about-copy {
+          justify-items: center;
+        }
+
+        .doctor-card {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .contact-address,
+        .button-row,
+        .cta-panel {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .cta-panel {
+          min-height: 360px;
+          padding-bottom: 28px;
+          align-items: center;
+          align-content: center;
+        }
+
+        .cta-panel > div {
+          display: grid;
+          align-content: center;
+          justify-items: center;
+        }
+
+        .contact-chip {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        #tratamentos,
+        #depoimentos,
+        #metodologia,
+        #atendimento,
+        #sobre,
+        #galeria,
+        #diferenciais,
+        #localizacao,
+        .cta-band {
+          padding-top: 80px !important;
+          padding-bottom: 80px !important;
+        }
+
+        .cta-band {
+          padding-top: 40px !important;
+          padding-bottom: 40px !important;
         }
 
         .differential {
@@ -1551,11 +1704,6 @@
           width: 100%;
         }
 
-        .clinic-gallery {
-          padding-top: 72px;
-          padding-bottom: 72px;
-        }
-
         .gallery-header {
           grid-template-columns: 1fr;
           gap: 20px;
@@ -1567,20 +1715,11 @@
           min-height: 320px;
         }
 
-        .method-section {
-          padding-top: 64px;
-          padding-bottom: 22px;
-        }
-
-        #sobre {
-          padding-top: 22px !important;
-        }
-
-        #localizacao {
-          padding-bottom: 22px !important;
-        }
-
         .location-visual .map-frame {
+          width: 100%;
+          aspect-ratio: auto;
+          height: 280px;
+          min-height: 280px;
           border-radius: 28px;
         }
 
@@ -1591,11 +1730,6 @@
         .location-photo-card {
           height: 240px;
           border-radius: 28px;
-        }
-
-        .cta-band {
-          padding-top: 22px !important;
-          padding-bottom: 22px !important;
         }
 
         .cta-panel {
@@ -1609,7 +1743,7 @@
 
         .cta-panel + .section,
         .cta-band + .section {
-          padding-top: 22px;
+          padding-top: 80px !important;
         }
 
         .hero-actions,
@@ -2397,7 +2531,7 @@
             <div class="map-frame">
               <iframe
                 title="Mapa da Bacic Odontologia Integrada"
-                src="https://www.google.com/maps?q=Rua%20Lu%C3%ADs%20Coelho%2C%20308%2C%20Consola%C3%A7%C3%A3o%2C%20S%C3%A3o%20Paulo%2C%20SP&output=embed"
+                src="https://www.google.com/maps?q=Rua%20Lu%C3%ADs%20Coelho%2C%20308%2C%20Consola%C3%A7%C3%A3o%2C%20S%C3%A3o%20Paulo%2C%20SP&z=15&output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 allowfullscreen
